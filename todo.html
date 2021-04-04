@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+
+{% block title %}Haishem NGO{% endblock %}
+{% block body %}
+
+
+
+
+
+
+
+<div class="container">
+  <h5 style="text-align: center;font-family: verdana;">Get Help.</h5>
+  <form action="/" method="post">
+    <div class="form-group">
+      <label style="text-align:center;" for="exampleInputEmail1">
+        <h4>Your City: </h4>
+      </label>
+      <input autocomplete="off" type="text" class="form-control" id="exampleInputtodo1" name="todo"
+        aria-describedby="emailHelp" placeholder="Enter City">
+      <label style="text-align:center;" for="exampleInputEmail1">
+        <h4>Your Contact: </h4>
+      </label>
+      <input autocomplete="off" type="text" class="form-control" id="exampleInputcontact" name="contact"
+        aria-describedby="contactHelp" placeholder="Ex: +92 3084247892">
+      <br>
+      <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Status:</label>
+        <select name="select" class="form-select" id="inputGroupSelect01">
+          <option disabled selected>I am:</option>
+          <option value="Student">Student(1st)</option>
+          <option value="Jobless">Jobless</option>
+          <option value="Widow">Widow(3rd)</option>
+          <option value="From Martyr Family">Martyr Family</option>
+          <option value="Homeless">Homeless(2nd)</option>
+          <option value="Orphan">Orphan</option>
+          <option value="Refugee">Refugee(4th)</option>
+          <option value="Passenger">Passenger(5th)</option>
+          <option value="Bedouin">Bedouin</option>
+          <option value="International Student">International Student</option>
+        </select>
+      </div>
+
+
+
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupSelect01">Method:</label>
+      <select name="callme" class="form-select" id="inputGroupSelect01">
+        <option disabled selected> I want help with:</option>
+        <option value="Call Me on Contact!">Call Me on Contact!</option>
+        <option value="Send Donations to Haishem">Send Donations to Haishem</option>
+      </select>
+    </div>
+
+    <small id="emailHelp" class="form-text text-muted">Select Your Method!</small>
+    <button onclick="playe()" type="submit" class="btn btn-outline-dark">Add Request 🙋</button>
+  </div>
+
+
+
+    
+  </form>
+</div>
+<br><br><br>
+<!-- c -->
+<!--  -->
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">City</th>
+          <th scope="col">Contact</th>
+          <th scope="col">I am:</th>
+          <th scope="col">Time</th>
+          <th scope="col">Way of Helping</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for i in y %}
+
+        <tr>
+          <th scope="row">{{loop.index}}</th>
+          <td>{{i.todo}}</td>
+          <td>{{i.contact}}</td>
+          <td>{{i.select}}</td>
+          <td>{{i.time}}</td>
+          <td>
+
+            <button onclick="clicker()" type="button" class="btn btn-outline-dark">
+              {{i.callme}}
+            </button>
+
+          </td>
+        </tr>
+
+
+        {% endfor %}
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+</div>
+
+
+
+<script>
+  function playe(){
+    alert("We'll Contact you very soon! ہم بہت جلد آپ سے رابطہ کریں گے")
+  }
+</script>
+<br><br><br>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- Footer -->
+	<section id="footer">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Quick links</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="/Home"><i class="fa fa-angle-double-right"></i>Home</a></li>
+						<li><a href="/about"><i class="fa fa-angle-double-right"></i>About</a></li>
+						<li><a href="/humanity"><i class="fa fa-angle-double-right"></i>Humanity</a></li>
+						<li><a href="/account"><i class="fa fa-angle-double-right"></i>Account Info</a></li>
+						<li><a href="/account"><i class="fa fa-angle-double-right"></i>Bank Info</a></li>
+					</ul>
+				</div>
+				
+				
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-lg-12 mt-2 mt-md-2 text-center text-white">
+				<div class="container-fluid">
+         
+        </div>
+				</div>
+				<hr>
+			</div>	
+		</div>
+	</section>
+	<!-- ./Footer -->
+{% endblock %}
